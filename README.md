@@ -1,3 +1,15 @@
+## How I made this
+
+1. `npx create-t3-app@latest`
+1. Create new Supabase project and copy the URI
+1. change db provider to postgresql in `schema.prisma`
+1. put db URI in .env
+1. `npx prisma db push`
+1. Register new OAuth App on GitHub and generate secret token (dev and prod)
+1. Change Discord to Github in `src/env.mjs` and `src/server/auth.ts`
+1. Generate NextAuth secret and save in .env
+1. Save GitHub client id and secret in .env (dev and prod)
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
