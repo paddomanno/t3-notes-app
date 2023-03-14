@@ -9,6 +9,9 @@
 1. Change Discord to Github in `src/env.mjs` and `src/server/auth.ts`
 1. Generate NextAuth secret and save in .env
 1. Save GitHub client id and secret in .env (dev and prod)
+1. Push repo to GitHub
+1. Login on Vercel.com and create new project from repo
+1. Add environment variables to project on Vercel and deploy
 
 # Create T3 App
 
