@@ -1,17 +1,25 @@
 ## How I made this
 
 1. `npx create-t3-app@latest`
-1. Create new Supabase project and copy the URI
-1. change db provider to postgresql in `schema.prisma`
-1. put db URI in .env
-1. `npx prisma db push`
-1. Register new OAuth App on GitHub and generate secret token (dev and prod)
-1. Change Discord to Github in `src/env.mjs` and `src/server/auth.ts`
-1. Generate NextAuth secret and save in .env
-1. Save GitHub client id and secret in .env (dev and prod)
-1. Push repo to GitHub
-1. Login on Vercel.com and create new project from repo
-1. Add environment variables to project on Vercel and deploy
+1. Set-up database
+   1. Create new Supabase project and copy the URI
+   1. change db provider to postgresql in `schema.prisma`
+   1. put db URI in .env
+   1. `npx prisma db push`
+1. Set-up GitHub OAuth
+   1. Register new OAuth App on GitHub and generate secret token (dev and prod)
+   1. Change 'Discord' to 'Github' in `src/env.mjs` and `src/server/auth.ts`
+   1. Generate NextAuth secret and save in .env
+   1. Save GitHub client id and secret in .env (dev and prod)
+1. Deploy to Vercel
+   1. Push repo to GitHub
+   1. Login on Vercel.com and create new project from repo
+   1. Add environment variables to project on Vercel and deploy
+1. Add UI
+   1. install daisyui and @tailwindcss/typography
+1. Add tables to database
+   1. add topic and note models in prisma schema
+   1. `npx prisma db push`
 
 # Create T3 App
 
