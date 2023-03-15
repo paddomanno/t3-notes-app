@@ -1,3 +1,4 @@
+import { type Topic } from "@prisma/client";
 import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 
@@ -7,7 +8,7 @@ export const topicRouter = createTRPCRouter({
       where: {
         userId: ctx.session.user.id,
       },
-    });
+    }) as Promise<Topic[]>;
   }),
 
   create: protectedProcedure
@@ -18,6 +19,6 @@ export const topicRouter = createTRPCRouter({
           title: input.title,
           userId: ctx.session.user.id,
         },
-      });
+      }) as Promise<Topic>;
     }),
 });
