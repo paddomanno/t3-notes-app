@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { api, type RouterOutputs } from "~/utils/api";
+import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 
 export default function Content() {
@@ -23,6 +24,19 @@ export default function Content() {
 
   const createTopicQuery = api.topic.create.useMutation({
     onSuccess: () => void refetchTopics(),
+  });
+
+  const { data: notes, refetch: refetchNotes } = api.note.getAll.useQuery(
+    { topicId: selectedTopic?.id ?? "" },
+    { enabled: sessionData?.user !== undefined && selectedTopic !== null }
+  );
+
+  const createNoteQuery = api.note.create.useMutation({
+    onSuccess: () => void refetchNotes(),
+  });
+
+  const deleteNoteQuery = api.note.delete.useMutation({
+    onSuccess: () => void refetchNotes(),
   });
 
   return (
@@ -64,6 +78,16 @@ export default function Content() {
         </div>
         <div className="col-span-3">
           {selectedTopic ? <p>Notes in topic {selectedTopic.title}</p> : <></>}
+          <div>
+            {notes?.map((note) => (
+              <div className="mt-5" key={note.id}>
+                <NoteCard
+                  note={note}
+                  onDelete={() => void deleteNoteQuery.mutate({ id: note.id })}
+                />
+              </div>
+            ))}
+          </div>
           <NoteEditor
             onSave={({ title, content }) => {
               void createNoteQuery.mutate({
