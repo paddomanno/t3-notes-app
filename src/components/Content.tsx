@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { api, type RouterOutputs } from "~/utils/api";
+import NoteEditor from "./NoteEditor";
 
 export default function Content() {
   const { data: sessionData } = useSession();
@@ -63,6 +64,15 @@ export default function Content() {
         </div>
         <div className="col-span-3">
           {selectedTopic ? <p>Notes in topic {selectedTopic.title}</p> : <></>}
+          <NoteEditor
+            onSave={({ title, content }) => {
+              void createNoteQuery.mutate({
+                title,
+                content,
+                topicId: selectedTopic?.id ?? "",
+              });
+            }}
+          />
         </div>
       </div>
     </div>
