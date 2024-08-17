@@ -1,3 +1,29 @@
+# My Notes App
+
+A full-stack web app for writing and organizing markdown notes, built with the latest web technologies.
+
+# Tech Stack
+
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+
+- [Next.js 13](https://nextjs.org)
+- Typescript
+- [NextAuth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
+- DaisyUI
+
+## Screenshot
+
+![Screenshot of my notes app UI](my-notes-app.PNG)
+
+## Note
+
+- This project is currently unmaintained and not working due to issues with the backend hosting service.
+- There is no live demo hosted at the moment.
+- A GitHub account is required to use this app.
+
 ## How I made this
 
 1. `npx create-t3-app@latest`
@@ -21,31 +47,20 @@
    1. add topic and note models in prisma schema
    1. `npx prisma db push`
 
-# Create T3 App
+## Feature ideas
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- [ ] Link markdown guide
+- [ ] Easily accessible markdown cheat sheet
+- [ ] Add discord auth
+- [ ] Edit notes
+- [ ] Move note to different topic
+- [ ] Rename / delete topic
+- [ ] Tag notes
+- [ ] Give notes a color
+- [ ] Show notes in grid/list
+- [ ] Sort notes by date / updated / title
+- [ ] Filter notes by tag
+- [ ] Placeholder data, maybe use a demo acc without auth?
+- [ ] Dark/Light themes
+- [ ] Search for notes
+- [ ] Markdown preview while writing
